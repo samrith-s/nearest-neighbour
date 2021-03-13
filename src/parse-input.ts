@@ -23,7 +23,7 @@ export function parseInput(inputString: string): Data {
             if (isNewTest) {
                 const size = line
                     .trim()
-                    .split(/\s*/)
+                    .split(/\s+/)
                     .map((number) => parseInt(number.trim(), 10));
 
                 acc.images[currentTestIndex] = {
