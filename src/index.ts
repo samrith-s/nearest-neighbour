@@ -8,33 +8,24 @@ process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
 let inputString = '';
-let inputArray: string[] = [];
 
 process.stdin.on('data', (inputStdin) => {
     inputString += inputStdin;
 });
 
-process.stdin.on('end', () => {
-    inputArray = inputString
-        .trim()
-        .split('\n')
-        .map((string) => {
-            return string.trim();
-        });
-
-    const tests = parseInt(inputArray[0], 10);
-
-    const testData = parseInput(inputArray.slice(1), {
-        count: tests,
-        images: [],
-    });
-
+function parseAndExecute() {
+    const testData = parseInput(inputString);
     main(testData);
+}
+
+process.stdin.on('end', () => {
+    parseAndExecute();
 });
 
 function main(data: Data) {
     for (let i = 0, len = data.count; i < len; i++) {
         // console.log(chalk.yellow('Test', i + 1, 'output:'));
+        console.log('');
         console.log(NearestNeighbour(data.images[i], i));
         console.log('');
     }
