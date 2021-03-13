@@ -7,6 +7,7 @@ export function parseInput(inputString: string): Data {
         .map((string) => {
             return string.trim();
         });
+    const count = parseInt(inputArray.shift(), 10);
 
     let isNewTest = true;
     let currentTestIndex = 0;
@@ -43,7 +44,7 @@ export function parseInput(inputString: string): Data {
             return acc;
         },
         {
-            count: parseInt(inputArray[0], 10),
+            count,
             images: [],
         }
     );
