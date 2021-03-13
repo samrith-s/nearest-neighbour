@@ -1,0 +1,17 @@
+{
+    "include": ["src"],
+    "exclude": ["**/node_modules"],
+    "compilerOptions": {
+        "rootDir": ".",
+        "noImplicitAny": true,
+        "declaration": true,
+        "isolatedModules": false,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "outDir": "./dist",
+        "declarationDir": "./dist/types",
+        "incremental": true,
+        "noEmit": false,
+        "allowSyntheticDefaultImports": true
+    }
+}
