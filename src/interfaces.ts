@@ -7,9 +7,3 @@ export interface Data {
     count: number;
     images: Image[];
 }
-
-export interface Pixel<T = 'white' | 'black'> {
-    x: number;
-    y: number;
-    type: T;
-}

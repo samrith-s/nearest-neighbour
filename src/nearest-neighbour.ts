@@ -1,6 +1,6 @@
-import { Image, Pixel } from './interfaces';
+import { Image } from './interfaces';
 
-export function NearestNeighbour(imageData: Image, testIndex?: number): string {
+export function NearestNeighbour(imageData: Image): string {
     const { size, bitmap } = imageData;
     const [rows, columns] = size;
 

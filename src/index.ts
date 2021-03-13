@@ -1,8 +1,6 @@
-import * as chalk from 'chalk';
-
 import { Data } from './interfaces';
-import { parseInput } from './parse-input';
 import { NearestNeighbour } from './nearest-neighbour';
+import { parseInput } from './parse-input';
 
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
@@ -24,9 +22,8 @@ process.stdin.on('end', () => {
 
 function main(data: Data) {
     for (let i = 0, len = data.count; i < len; i++) {
-        // console.log(chalk.yellow('Test', i + 1, 'output:'));
         console.log('');
-        console.log(NearestNeighbour(data.images[i], i));
+        console.log(NearestNeighbour(data.images[i]));
         console.log('');
     }
 }
