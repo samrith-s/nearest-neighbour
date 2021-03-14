@@ -30,6 +30,10 @@ export function NearestNeighbour(imageData: Image): string {
                 if (currentDistance < leastDistance) {
                     leastDistance = currentDistance;
                     distanceMap[i][j] = leastDistance;
+
+                    if (leastDistance === 1) {
+                        break;
+                    }
                 }
             }
         }
