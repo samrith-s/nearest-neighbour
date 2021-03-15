@@ -8,14 +8,14 @@
     "private": true,
     "scripts": {
         "clean": "rimraf dist",
-        "dev": "node scripts/watcher",
+        "dev:one": "node scripts/watcher 1",
+        "dev:two": "node scripts/watcher 2",
         "build": "yarn clean && tsc -p .",
         "start:one": "yarn build && node dist/src/index 1",
         "start:two": "yarn build && node dist/src/index 2",
         "test": "jest",
         "test:generate": "node scripts/generate-test-cases",
-        "lint": "eslint src/**/*",
-        "release": "standard-version"
+        "lint": "eslint src/**/*"
     },
     "devDependencies": {
         "@commitlint/cli": "^12.0.1",
