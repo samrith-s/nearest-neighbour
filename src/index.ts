@@ -1,6 +1,9 @@
 import { Data } from './interfaces';
-import { NearestNeighbour } from './nearest-neighbour';
+import { NearestNeighbour as SolutionOne } from './nearest-neighbour/solution-one';
+import { NearestNeighbour as SolutionTwo } from './nearest-neighbour/solution-two';
 import { parseInput } from './parse-input';
+
+const [solutionNumber = 1] = process.argv.slice(2);
 
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
@@ -23,7 +26,13 @@ process.stdin.on('end', () => {
 function main(data: Data) {
     for (let i = 0, len = data.count; i < len; i++) {
         console.log('');
-        console.log(NearestNeighbour(data.images[i]));
+        if (solutionNumber === 1) {
+            console.log(SolutionOne(data.images[i]));
+            console.log('');
+            continue;
+        }
+
+        console.log(SolutionTwo(data.images[i]));
         console.log('');
     }
 }

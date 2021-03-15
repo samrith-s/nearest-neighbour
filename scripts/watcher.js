@@ -4,6 +4,8 @@ const { clear } = require('console');
 const chokidar = require('chokidar');
 const chalk = require('chalk');
 
+const [solutionNumber = 1] = process.argv.slice(2);
+
 const watcher = chokidar.watch(['tsconfig.json', '.env', './src'], {
     cwd: process.cwd(),
     ignoreInitial: true,
@@ -12,7 +14,7 @@ const watcher = chokidar.watch(['tsconfig.json', '.env', './src'], {
 });
 
 function run() {
-    execSync('yarn ts-node src/index.ts', {
+    execSync(`yarn ts-node src/index.ts ${solutionNumber}`, {
         cwd: process.cwd(),
         stdio: 'inherit',
     });

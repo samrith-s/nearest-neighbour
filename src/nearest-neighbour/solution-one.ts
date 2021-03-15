@@ -1,4 +1,4 @@
-import { Image } from './interfaces';
+import { Image } from '../interfaces';
 
 export function NearestNeighbour(imageData: Image): string {
     const { size, bitmap } = imageData;
@@ -39,5 +39,5 @@ export function NearestNeighbour(imageData: Image): string {
         }
     }
 
-    return distanceMap.map((o) => o.join('')).join('\n');
+    return distanceMap.map((o) => o.join(' ')).join('\n');
 }
